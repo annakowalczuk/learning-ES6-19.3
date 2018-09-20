@@ -39,11 +39,9 @@ var average = function average() {
     args[_key] = arguments[_key];
   }
 
-  var sum = 0;
-  args.forEach(function (arg) {
-    sum += arg;
-  });
-  return sum / args.length;
+  return args.reduce(function (sum, arg) {
+    return sum += arg;
+  }, 0) / args.length;
 };
 console.log(average(1, 3, 6, 6));
 

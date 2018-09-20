@@ -29,11 +29,7 @@ average(1, 3) // 2
 average(1, 3, 6, 6) // 4
 */
 
-const average = (...args) => {
-    let sum = 0;
-    args.forEach( arg => { sum += arg }); 
-    return sum / args.length;
-};
+const average= (...args) => args.reduce(function(sum, arg) { return sum += arg; }, 0)/args.length;
 console.log(average(1, 3, 6, 6));
 
 //Zadanie czwarte
